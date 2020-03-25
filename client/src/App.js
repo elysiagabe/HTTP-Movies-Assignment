@@ -38,7 +38,7 @@ const App = () => {
       </Route>
 
       <Route path="/movies/:id/edit">
-        <EditMovieForm />
+        <EditMovieForm movies={movieList} setMovies={setMovieList} />
       </Route>
     </>
   );
