@@ -72,6 +72,12 @@ body {
   right: 100px;
 }
 
+.delete-button {
+  position: absolute;
+  bottom: 15px;
+  right: 25px;
+}
+
 .home-button {
   padding: 5px 10px;
   background-color: lightskyblue;
