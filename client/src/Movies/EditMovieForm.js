@@ -16,14 +16,10 @@ const EditMovieForm = props => {
 
     const handleChanges = e => {
         e.persist();
-
         let value = e.target.value;
-
         if (e.target.name === "stars") {
             value = value.split(",")
-            console.log(value);
         }
-
         setUpdatedMovie({
             ...updatedMovie,
             [e.target.name]: value
