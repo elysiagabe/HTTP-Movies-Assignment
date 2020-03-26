@@ -10,13 +10,23 @@ const EditMovieForm = props => {
     const [updatedMovie, setUpdatedMovie] = useState({
         title: '',
         director: '',
-        metascore: ''
+        metascore: '',
+        stars: []
     });
 
     const handleChanges = e => {
+        e.persist();
+
+        let value = e.target.value;
+
+        if (e.target.name === "stars") {
+            value = value.split(",")
+            console.log(value);
+        }
+
         setUpdatedMovie({
             ...updatedMovie,
-            [e.target.name]: e.target.value
+            [e.target.name]: value
         })
     }
 
@@ -73,6 +83,15 @@ const EditMovieForm = props => {
                     name="metascore"
                     id="metascore"
                     value={updatedMovie.metascore}
+                    onChange={handleChanges}
+                />
+
+                <label htmlFor="stars">Stars</label>
+                <input 
+                    type="text"
+                    name="stars"
+                    id="stars"
+                    value={updatedMovie.stars}
                     onChange={handleChanges}
                 />
 
